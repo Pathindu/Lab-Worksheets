@@ -9,10 +9,10 @@ public class Circle {
     }
 
     public float computeArea() {
-        return (float) (PI * this.r * this.r);
+        return (PI * this.r * this.r);
     }
 
     public float computeCircumference() {
-        return (float) (2 * PI * this.r);
+        return (2 * PI * this.r);
     }
 }
