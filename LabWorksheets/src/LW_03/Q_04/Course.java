@@ -5,8 +5,9 @@ public class Course {
     private String courseCode;
     private Lecturer lecturer;
 
-    public Course(Lecturer lecturer) {
-        this.lecturer = new Lecturer();
+    public Course(String courseName, String courseCode) {
+        this.courseName = courseName;
+        this.courseCode = courseCode;
     }
 
     public String getCourseName() {
@@ -29,7 +30,7 @@ public class Course {
         return lecturer.getLectureName();
     }
 
-    public void setLecturer(Lecturer lecturer) {
-        this.lecturer = lecturer;
+    public void setLecturer(Lecturer lecturers) {
+        lecturer = lecturers;
     }
 }
