@@ -1,22 +1,22 @@
 package LW_03.Q_04;
 
 public class Lecturer {
-    private String lectureName;
-//    private Course courseTeaching;
+    private String lecturerName;
+    private String courseTeaching;
 
-    public String getLectureName() {
-        return lectureName;
+    public String getLecturerName() {
+        return lecturerName;
     }
 
-    public void setLectureName(String lectureName) {
-        this.lectureName = lectureName;
+    public void setLecturerName(String lecturerName) {
+        this.lecturerName = lecturerName;
     }
 
-//    public String getCourseTeaching() {
-//        return courseTeaching.getCourseName();
-//    }
-//
-//    public void setCourseTeaching(Course courseTeaching) {
-//        this.courseTeaching = courseTeaching;
-//    }
+    public String getCourseTeaching() {
+        return courseTeaching;
+    }
+
+    public void setCourseTeaching(String courseTeaching) {
+        this.courseTeaching = courseTeaching;
+    }
 }
