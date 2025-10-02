@@ -1,16 +1,24 @@
 package LW_03.Q_05;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Library {
     ArrayList<BorrowableItems.Book> BorrowableBookList = new ArrayList<>();
 
     public void addBook(String title, String author, String ISBN) {
         BorrowableBookList.add(new BorrowableItems.Book(title, author, ISBN));
+        System.out.println("\nBook successfully added!\n");
     }
 
-    public void checkOut(String ISBN) {
-        BorrowableBookList.removeIf(item -> item.ISBN == ISBN);
+    public boolean checkOut(String ISBN) {
+        for (BorrowableItems.Book book : BorrowableBookList) {
+            if (ISBN.equals(book.getISBN())) {
+                book.setAvailable(false);
+                return true;
+            }
+        }
+        return false;
     }
 
     public String listBooks() {
@@ -22,6 +30,6 @@ public class Library {
     }
 
     public String LibraryInfo() {
-        return "No of Books available : " + BorrowableBookList.size();
+        return "\nNo of Books available : " + BorrowableBookList.size();
     }
 }
