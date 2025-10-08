@@ -12,7 +12,18 @@ public class Q_05 {
             switch (in) {
                 case 1:
                     entree();
+                    break;
+                case 2:
+                    sDish();
+                    break;
+                case 3:
+                    drink();
+                    break;
+                case 4:
+                    System.exit(0);
             }
+            in = sc.nextInt();
+
         }
     }
 
