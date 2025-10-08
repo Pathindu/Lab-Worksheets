@@ -1,35 +1,42 @@
 package LW_03.Q_05;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Library {
-    ArrayList<BorrowableItems.Book> BorrowableBookList = new ArrayList<>();
+    ArrayList<BorrowableItems> BorrowableItemList = new ArrayList<>();
 
-    public void addBook(String title, String author, String ISBN) {
-        BorrowableBookList.add(new BorrowableItems.Book(title, author, ISBN));
-        System.out.println("\nBook successfully added!\n");
+    public void addLibraryBook(BorrowableItems item) {
+        if (item instanceof Book) {
+            BorrowableItemList.add(item);
+        } else {
+            System.out.println("Item is not supported yet!!");
+        }
     }
 
-    public boolean checkOut(String ISBN) {
-        for (BorrowableItems.Book book : BorrowableBookList) {
-            if (ISBN.equals(book.getISBN())) {
-                book.setAvailable(false);
-                return true;
+    public void checkOutBook(String title) {
+        for (BorrowableItems item : BorrowableItemList) {
+            if (item instanceof Book) {
+                if (((Book) item).getTitle() == title) {
+                    if (item.isAvailable()) {
+                        item.setAvailable(false);
+                        System.out.println("'" + ((Book) item).getTitle() + "' Successfully checked out!");
+                    } else {
+                        System.out.println("'" + ((Book) item).getTitle() + "' is not available!");
+                    }
+                }
             }
         }
-        return false;
     }
 
-    public String listBooks() {
-        String list = "";
-        for (BorrowableItems.Book item : BorrowableBookList) {
-            list += item.displayInfo() + "\n\n";
+    public String listAvailableBooks() {
+        String list = "\n";
+        for (BorrowableItems item : BorrowableItemList) {
+            list += item instanceof Book ? ((Book) item).isAvailable() ? (((Book) item).displayInfo()) + "\n\n" : "" : "";
         }
         return list;
     }
 
-    public String LibraryInfo() {
-        return "\nNo of Books available : " + BorrowableBookList.size();
+    public String displayLibraryInfo() {
+        return "Total number of items : " + BorrowableItemList.size();
     }
 }
