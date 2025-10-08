@@ -2,7 +2,7 @@ package LW_03.Q_04;
 
 public class Lecturer {
     private String lecturerName;
-    private String courseTeaching;
+    private Course courseTeaching;
 
     public String getLecturerName() {
         return lecturerName;
@@ -12,11 +12,11 @@ public class Lecturer {
         this.lecturerName = lecturerName;
     }
 
-    public String getCourseTeaching() {
+    public Course getCourseTeaching() {
         return courseTeaching;
     }
 
-    public void setCourseTeaching(String courseTeaching) {
+    public void setCourseTeaching(Course courseTeaching) {
         this.courseTeaching = courseTeaching;
     }
 }

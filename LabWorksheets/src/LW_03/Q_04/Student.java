@@ -3,7 +3,7 @@ package LW_03.Q_04;
 public class Student {
     private String studentName;
     private String degreeName;
-    private String courseFollowing;
+    private Course courseFollowing;
 
     public String getStudentName() {
         return studentName;
@@ -21,11 +21,11 @@ public class Student {
         this.degreeName = degreeName;
     }
 
-    public String getCourseFollowing() {
+    public Course getCourseFollowing() {
         return courseFollowing;
     }
 
-    public void setCourseFollowing(String courseFollowing) {
+    public void setCourseFollowing(Course courseFollowing) {
         this.courseFollowing = courseFollowing;
     }
 }

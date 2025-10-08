@@ -7,27 +7,26 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         Lecturer lecturer1 = new Lecturer();
+        Course course1 = new Course();
+        Student student1 = new Student();
+
         System.out.println("Enter Lecture Name :");
         lecturer1.setLecturerName(sc.nextLine());
-        System.out.println("Enter Lecture Subject :");
-        lecturer1.setCourseTeaching(sc.nextLine());
+        lecturer1.setCourseTeaching(course1);
 
-        Course course1 = new Course();
         System.out.println("Enter course Name :");
         course1.setCourseName(sc.nextLine());
         System.out.println("Enter course Code :");
         course1.setCourseCode(sc.nextLine());
+        course1.setLecturer(lecturer1);
 
-//        course1.setLecturer(lecturer1);
-
-        Student student1 = new Student();
         System.out.println("Enter student Name :");
         student1.setStudentName(sc.nextLine());
         System.out.println("Enter student degree :");
         student1.setDegreeName(sc.nextLine());
         System.out.println("Enter student course following :");
         student1.setDegreeName(sc.nextLine());
-
+        student1.setCourseFollowing(course1);
 
         sc.close();
     }

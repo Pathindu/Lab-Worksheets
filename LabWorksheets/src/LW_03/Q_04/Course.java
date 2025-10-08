@@ -3,7 +3,7 @@ package LW_03.Q_04;
 public class Course {
     private String courseName;
     private String courseCode;
-    private Lecturer lecturers;
+    private Lecturer lecturer;
 
     public String getCourseName() {
         return courseName;
@@ -22,10 +22,10 @@ public class Course {
     }
 
     public Lecturer getLecturer() {
-        return lecturers;
+        return lecturer;
     }
 
-    public void setLecturer(Lecturer lecturers) {
-//        this.lecturers = lecturers;
+    public void setLecturer(Lecturer lecturer) {
+        this.lecturer = lecturer;
     }
 }
